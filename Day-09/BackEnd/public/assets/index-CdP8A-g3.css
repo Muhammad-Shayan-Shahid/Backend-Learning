@@ -1,0 +1,1 @@
+*{margin:0;padding:0;box-sizing:border-box}html,body,#root{height:100px;width:100px}html{background:#242222;font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Open Sans,Helvetica Neue,sans-serif}.notes{display:flex;gap:1rem;padding-block:1rem}.note{background:#564f4f;padding:1rem;border-radius:.7rem;max-width:20rem;color:#fff}
