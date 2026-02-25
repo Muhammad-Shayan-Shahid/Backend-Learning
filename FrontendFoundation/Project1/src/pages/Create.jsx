@@ -9,7 +9,6 @@ const Create = () => {
 
     const submitHandler = (recpie) =>{
         recpie.id = nanoid()
-        console.log(recpie)
 
         setdata([...data , recpie])
         reset()
@@ -63,9 +62,9 @@ const Create = () => {
         className='border-b outline-0 p-2'
         {...register("category")} 
         >
-            <option value="cat1">Category 1</option>
-            <option value="cat2">Category 2</option>
-            <option value="cat3">Category 3</option>
+            <option value="breakfast">Breakfast</option>
+            <option value="lunch">Lunch</option>
+            <option value="supper">Supper</option>
         </select>
         
 

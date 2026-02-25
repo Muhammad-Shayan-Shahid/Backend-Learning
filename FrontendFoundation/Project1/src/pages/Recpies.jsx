@@ -1,18 +1,18 @@
 import { useContext } from "react"
 import { recpiecontext } from '../context/RecpieContext'
+import RecpieCard from "../components/RecpieCard"
 
 
 const Recpies = () => {
   const {data} = useContext(recpiecontext)
+  const renderRecpie = data.map((recipe, index) => (
+    <RecpieCard key={index} recipe={recipe} />
+  ))
 
-  const renderRecpie  = data.map((recipe)=>{
-        <div key={recipe.id}>
-      <h1>{recipe.title}</h1>
-    </div>
-  })
+  
   return (
     <div>
-      {renderRecpie}
+       {renderRecpie}
     </div>
   )
 }
