@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import '../style/form.scss'
 import { Link } from 'react-router'
-import axios from 'axios'
+
 const Register = () => {
 
   const [username, setusername] = useState("")
@@ -10,15 +10,6 @@ const Register = () => {
 
   async function handleSubmit(e) {
       e.preventDefault() ;
-
-      axios.post("http://localhost:3000/api/auth/register",{
-        username ,
-        email ,
-        password
-      }) 
-      .then(res=>{
-        console.log(res.data);
-      })
   }
 
   return (
@@ -34,14 +25,14 @@ const Register = () => {
              />
 
             <input
-            onInput={e=>{setemail(e.target.value)}}
+            onInput={e=>{setpassword(e.target.value)}}
              type="password" 
              name="password" 
              placeholder='Enter password'
               />
 
             <input 
-            onInput={e=>{setpassword(e.target.value)}}
+            onInput={e=>{setemail(e.target.value)}}
             type="email" 
             name="email" 
             placeholder='Enter email'
