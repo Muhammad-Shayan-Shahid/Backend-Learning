@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import '../style/form.scss'
 import { Link } from 'react-router'
+import {useAuth} from '../hooks/useAuth'
 
 const Register = () => {
 
@@ -8,9 +9,22 @@ const Register = () => {
   const [email, setemail] = useState("")
   const [password, setpassword] = useState("")
 
+  const {handleRegister} = useAuth()
+  const {loading} = useAuth()
+
   async function handleSubmit(e) {
       e.preventDefault() ;
+
+      handleRegister(username ,email , password )
+      .then(res=>{
+        console.log(res)
+      })
   }
+
+  if (loading) {
+        return (<main><h1>Loading....</h1></main>)
+    }
+
 
   return (
     <main>
@@ -38,7 +52,7 @@ const Register = () => {
             placeholder='Enter email'
              />
 
-            <button>Submit</button>
+            <button className='button primary-button'>Submit</button>
 
         </form>
         <p>Already have an account? <Link className='toggleAuthForm' to="/login">Login</Link></p>
