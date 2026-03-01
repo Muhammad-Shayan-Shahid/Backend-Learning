@@ -20,7 +20,7 @@ const Login = () => {
       .then(res=>{
         console.log(res)
       })
-      navigate("/")
+      // navigate("/")
 
   }
 

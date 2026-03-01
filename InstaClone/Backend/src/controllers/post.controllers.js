@@ -1,7 +1,6 @@
 const postModel  = require("../models/post.models")
 const ImageKit = require("@imagekit/nodejs")
 const { toFile } = require("@imagekit/nodejs")
-const identifyUser = require("../middlewares/auth.middlewares")
 const likeModel  = require("../models/like.models")
 
 const  imagekit = new ImageKit({
@@ -93,9 +92,19 @@ async function likePostController(req , res){
     })
 }
 
+async function getFeedController(req , res){
+    const post  = await postModel.find().populate("user")  // populate show data of all user
+
+    res.status(200).json({
+        message : "Posts fetched successfully..." ,
+        post
+    })
+}
+
 module.exports = {
     createPostController , 
     getPostController ,
     getPostDetailController ,
-    likePostController
+    likePostController ,
+    getFeedController
 }

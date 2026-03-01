@@ -10,9 +10,9 @@ export function useAuth(){
     const handleLogin = async (username, password) => {
         setloading(true)
         const response = await login(username, password)
-        console.log(response)
+        setuser(response.user)
         setloading(false)
-
+        return response
     }
 
     const handleRegister = async (username, email, password) => {
