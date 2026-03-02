@@ -1,6 +1,6 @@
 import {createContext, useState} from 'react'
 
-export const PostContent = createContext()
+export const PostContext = createContext()
 
 export function PostProvider({children}){
     
@@ -9,8 +9,8 @@ export function PostProvider({children}){
     const [feed, setfeed] = useState(null)
 
     return(
-        <PostContent.Provider value={{loading ,setloading ,post ,setpost ,feed ,setfeed}}> 
+        <PostContext.Provider value={{loading ,setloading ,post ,setpost ,feed ,setfeed}}> 
             {children}
-        </PostContent.Provider>
+        </PostContext.Provider>
     )
 }
