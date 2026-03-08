@@ -10,6 +10,6 @@ router.post("/login" , authController.loginUser)
 // retrn details of login user
 router.get("/get-me" , authMiddlewares.authUser ,authController.getMe)
 
-router.get("/logout" ,authController.getMe)
+router.get("/logout" ,authController.logoutUser)
 
 module.exports = router
