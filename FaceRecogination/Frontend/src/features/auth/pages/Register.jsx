@@ -14,13 +14,13 @@ const Register = () => {
 
     const { loading, handleRegister } = useAuth()
 
-    async function handleSubmit(e) {
-        e.preventDefault()
+ async function handleSubmit(e) {
+    e.preventDefault();
 
-        await handleRegister({ username, password, email })
+    await handleRegister({ email, password, username });
 
-        navigate('/')
-    }
+    navigate("/");
+}
   return (
      <main className="register-page">
             <div className="form-container">
