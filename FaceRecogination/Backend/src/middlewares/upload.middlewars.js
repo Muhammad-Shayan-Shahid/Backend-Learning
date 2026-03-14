@@ -5,7 +5,7 @@ const storage = multer.memoryStorage()
 const uplaod = multer({
     storage : storage,
     limits : {
-        fileSize : 1024*1024*10// 5  MB
+        fileSize : 1024*1024*10 // 10  MB
     }
 })
 

@@ -5,4 +5,6 @@ const router = Router()
 
 router.post("/" , uplaod.single("song") ,songContollers.uploadSong )
 
+router.get("/"  , songContollers.getSong)
+
 module.exports = router
